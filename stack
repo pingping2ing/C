@@ -1,0 +1,41 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define MAX 10
+int sstack[MAX];
+int top = -1;
+
+void push(int n)
+{
+    if (top == MAX - 1)
+        cout << "stack  is full\n";
+    else
+    {
+        top++;
+        sstack[top] = n;
+        cout << n << " push\n";
+    }
+}
+
+void pop()
+{
+    if (top == -1)
+        cout << "stack is empty\n";
+    else
+    {
+        cout << sstack[top] << " pop\n";
+        top--;
+    }
+}
+
+int main()
+{
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+
+    for (int i = 1; i < 12; i++)
+        push(i);
+    pop();
+    pop();
+    pop();
+}
